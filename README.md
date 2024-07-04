@@ -28,7 +28,7 @@ void example_task(void *arg) {
 - for complete example check out examples/main.c
 
 
-## Enhancements for a Better ThreadPool
+## TODO future plans
 To improve the ThreadPool library, consider the following enhancements:
 
 - Task Queue: Implement a task queue to manage tasks more efficiently. Tasks can be queued when all threads are busy, and idle threads can fetch tasks from the queue.Dynamic 
