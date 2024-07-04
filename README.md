@@ -1,6 +1,32 @@
 # ThreadPool
 Simple POSIX style thread pool lib
 
+## Steps to use
+```main.c
+int initialize_thread_pool(ThreadPool *pool);
+
+int add_task_to_pool(ThreadPool *pool, void (*task)(void*), int num_args, ...);
+
+void wait_for_all_threads(ThreadPool *pool);
+
+void destroy_thread_pool(ThreadPool *pool);
+```
+### task example
+```main.c
+void example_task(void *arg) {
+    // Unpack the arguments
+    void **args = (void**) arg;
+    int length = *(int*)args[0];
+    int *array = (int*)args[1];
+
+    for (int i = 0; i < length; i++) {
+        printf("Processing number: %d\n", array[i]);
+        sleep(1); // Simulate some work
+    }
+}
+```
+
+
 
 ## Enhancements for a Better ThreadPool
 To improve the ThreadPool library, consider the following enhancements:
