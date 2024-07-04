@@ -1,7 +1,7 @@
 # ThreadPool
 Simple POSIX style thread pool lib
 
-## Steps to use
+### Steps to use
 ```main.c
 int initialize_thread_pool(ThreadPool *pool);
 
@@ -25,7 +25,7 @@ void example_task(void *arg) {
     }
 }
 ```
-
+- for complete example check out examples/main.c
 
 
 ## Enhancements for a Better ThreadPool
