@@ -17,6 +17,7 @@ void example_task(void *arg) {
 int main() {
     ThreadPool pool;
     if (initialize_thread_pool(&pool) != 0) {
+        // 0 == success
         fprintf(stderr, "Failed to initialize thread pool\n");
         return -1;
     }
@@ -25,6 +26,7 @@ int main() {
     int length = sizeof(numbers) / sizeof(numbers[0]);
 
     if (add_task_to_pool(&pool, example_task, 2, &length, numbers) == 0) {
+        // 0 == fail == 0 number of available threads
         printf("No available threads for processing the array\n");
     }
 
